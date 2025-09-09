@@ -1,10 +1,64 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Users, ShoppingCart, TrendingUp, Settings, FileText, Calendar, Euro } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { CheckCircle, Users, ShoppingCart, TrendingUp, Settings, FileText, Calendar, Euro, Lock } from "lucide-react"
 import Image from "next/image"
 
 export default function ProposalPage() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+
+  const handlePasswordSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (password === "schaap2025") {
+      setIsAuthenticated(true)
+      setError("")
+    } else {
+      setError("Onjuiste code. Probeer opnieuw.")
+      setPassword("")
+    }
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="w-full max-w-md mx-4">
+          <CardHeader className="text-center">
+            <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <Lock className="h-8 w-8 text-primary" />
+            </div>
+            <CardTitle className="text-2xl font-bold">Toegang Vereist</CardTitle>
+            <p className="text-muted-foreground">Voer de toegangscode in om het voorstel te bekijken</p>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handlePasswordSubmit} className="space-y-4">
+              <div>
+                <Input
+                  type="password"
+                  placeholder="Toegangscode"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="text-center text-lg"
+                />
+              </div>
+              {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+              <Button type="submit" className="w-full" size="lg">
+                Toegang Verkrijgen
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
+      </div>
+    )
+  }
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
