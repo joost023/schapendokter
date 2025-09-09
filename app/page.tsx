@@ -64,34 +64,34 @@ export default function ProposalPage() {
       {/* Header */}
       <header style={{ backgroundColor: "#fffbef" }} className="py-8">
         <div className="container mx-auto px-6">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 w-full lg:w-auto">
               <Image
                 src="/schapendokter-logo.png"
                 alt="Schapendokter Logo"
                 width={200}
                 height={45}
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
               />
-              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <Image
                 src="/zod-veterinary-logo.png"
                 alt="ZOD Veterinary Center Logo"
                 width={220}
                 height={66}
-                className="h-14 w-auto"
+                className="h-12 sm:h-14 w-auto"
               />
-              <div className="w-px h-12 bg-gray-300"></div>
+              <div className="hidden sm:block w-px h-12 bg-gray-300"></div>
               <Image
                 src="/ecommerce-manager-new-logo.png"
                 alt="Ecommerce Manager Logo"
                 width={140}
                 height={40}
-                className="h-8 w-auto opacity-80"
+                className="h-6 sm:h-8 w-auto opacity-80"
               />
             </div>
-            <div className="text-right">
-              <p className="text-lg mt-1 text-muted-foreground">Adviestraject 2025</p>
+            <div className="text-center lg:text-right">
+              <p className="text-base sm:text-lg mt-1 text-muted-foreground">Adviestraject 2025</p>
             </div>
           </div>
         </div>
@@ -104,19 +104,35 @@ export default function ProposalPage() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold flex items-center gap-2">
                 <FileText className="h-6 w-6" />
-                Context & Uitdaging
+                Inleiding
               </CardTitle>
-              <p className="text-sm text-muted-foreground italic">Aanleiding: Gesprek met Margit Groeneveld</p>
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-lg leading-relaxed">
-                De huidige webshop draait op een <strong>verouderde Magento-omgeving</strong>. De huidige leverancier
-                verplicht Schapendokter.nl om over te stappen naar een nieuw systeem.
+                {/* Jullie hoster / leverancier van de huidige webshop liet weten dat een migratie naar een nieuw systeem noodzakelijk is. Margit Groeneveld heeft dit moment aangegrepen om breder te verkennen welke oplossingen het beste aansluiten bij Schapendokter.nl en ZOD. In plaats van snel te beslissen, nam zij contact met mij op om de mogelijkheden, aandachtspunten en vervolgstappen te bespreken. */}
+                Jullie hoster / leverancier van de huidige webshop liet weten dat een migratie naar een nieuw systeem
+                noodzakelijk is. Margit Groeneveld heeft dit moment aangegrepen om breder te verkennen welke oplossingen
+                het beste aansluiten bij Schapendokter.nl en ZOD. In plaats van snel te beslissen, nam zij contact met
+                mij op om de mogelijkheden, aandachtspunten en vervolgstappen te bespreken.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Dit adviestraject heeft als doel om de wensen en eisen zorgvuldig in kaart te brengen, zodat de
-                organisatie niet overhaast een keuze maakt, maar een <strong>toekomstbestendig fundament</strong> legt.
+                Mijn advies was helder: maak een weloverwogen keuze en doe dat met iemand die de opties én de valkuilen
+                kent. Naar aanleiding van ons gesprek heeft Margit mij gevraagd een voorstel te doen voor de begeleiding
+                van het denk- en selectieproces.
               </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Met dit adviestraject brengen we jullie wensen, eisen en randvoorwaarden gestructureerd in kaart. Zo
+                voorkomen we haastwerk en leggen we een toekomstbestendige basis die echt past bij jullie organisatie.
+              </p>
+              <div className="bg-blue-50 rounded-lg p-4 mt-6 border border-blue-200">
+                <p className="text-sm text-blue-800 font-medium mb-2">📋 In dit voorstel vindt u:</p>
+                <div className="text-sm text-blue-700 space-y-1">
+                  <p>• Een analyse van de huidige situatie en marktpotentieel</p>
+                  <p>• Een gedetailleerd stappenplan voor het adviestraject</p>
+                  <p>• Concrete workshop onderwerpen en werkwijze</p>
+                  <p>• Transparante investering en vervolgmogelijkheden</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>
