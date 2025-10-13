@@ -142,14 +142,18 @@ export default function ProposalPage() {
                   <p className="text-base md:text-lg leading-relaxed">
                     De huidige partij stopt eind 2025 met het ondersteunen van Magento. Dat betekent dat jullie voor een
                     belangrijke keuze staan. Tijdens ons gesprek kwam de vraag of we de huidige omgeving zouden kunnen
-                    migreren naar een nieuwe hosting. Ik ben ederim: ik ken geen enkele partij die graag een oude,
-                    verouderde omgeving overneemt. En eerlijk gezegd zou ik dat ook nietE adviseren.
+                    migreren naar een nieuwe hosting. Strategisch gezien is dit het perfecte moment om te investeren in
+                    een moderne, compliant omgeving die helemaal aansluit bij jullie toekomstplannen. Een nieuwe basis
+                    biedt niet alleen compliance-zekerheid, maar ook de flexibiliteit om te groeien en te koppelen met
+                    toekomstige systemen zoals PMS-oplossingen.
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     Jullie hebben specifieke functies nodig en moeten voldoen aan strikte compliance-eisen. Of je nu
                     kiest voor migratie of voor iets nieuws bouwen—er zal hoe dan ook geïnvesteerd moeten worden. De
-                    vraag is dus niet <em>of</em> je investeert, maar <em>waarin</em> je investeert.
+                    vraag is dus niet <em>of</em> je investeert, maar <em>waarin</em> je investeert: in het verleden of
+                    in de toekomst.
                   </p>
+                  {/* </CHANGE> */}
                   <div className="bg-slate-50 rounded-lg p-4 md:p-6 my-4 md:my-6 border border-slate-200">
                     <h3 className="font-semibold text-slate-900 mb-3 text-base md:text-lg">
                       💡 Een Unieke Samenwerking
