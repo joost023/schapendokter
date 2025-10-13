@@ -18,6 +18,10 @@
   --muted-foreground: oklch(0.4 0 0); /* Darker text for muted elements */
   --accent: oklch(0.96 0.01 85); /* #f5f5dc - Accent background for highlights */
   --accent-foreground: oklch(0 0 0); /* #000000 - Accent text */
+  /* Added orange accent color for 10% brand highlights */
+  --orange-accent: oklch(0.65 0.18 45); /* #FF6B35 - Orange accent from Schapendokter brand */
+  --orange-accent-foreground: oklch(1 0 0); /* #ffffff - White text on orange */
+  /* */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.86 0 0); /* #dcdcdc - Border color */
@@ -91,6 +95,10 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  /* Added orange accent color tokens */
+  --color-orange-accent: var(--orange-accent);
+  --color-orange-accent-foreground: var(--orange-accent-foreground);
+  /* */
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
