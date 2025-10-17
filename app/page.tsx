@@ -625,6 +625,32 @@ export default function ProposalPage() {
             <section>
               <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">Kostenoverzicht</h2>
 
+              <Card className="border-2 border-slate-300 mb-6" style={{ backgroundColor: "#fffbef" }}>
+                <CardContent className="p-4 md:p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-slate-700 text-white rounded-full p-2 flex-shrink-0">
+                      <Shield className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2 text-slate-900">SaaS / Lease Constructie</h3>
+                      <p className="text-slate-800 leading-relaxed mb-3">
+                        Dit voorstel is gebaseerd op een **SaaS (Software as a Service) / lease model**. De maandelijkse
+                        kosten van **€249 per storefront** dekken het platform (de code en alle functies) en basis
+                        hosting. Jullie betalen een eenmalige bouwprijs voor de MVP en vervolgens vaste maandkosten voor
+                        toegang tot het platform, onderhoud en doorontwikkeling.
+                      </p>
+                      <p className="text-slate-800 leading-relaxed">
+                        **Let op:** Hostingkosten zijn variabel en afhankelijk van de grootte van jullie catalogus en
+                        omzet. Bij groei kunnen de hostingkosten toenemen, maar dit wordt altijd vooraf met jullie
+                        besproken. Dit betekent dat jullie altijd beschikken over een up-to-date, veilig en compliant
+                        platform zonder grote investeringen in eigen infrastructuur of IT-personeel.
+                      </p>
+                      {/* </CHANGE> */}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               {/* Main MVP Build */}
               <Card className="bg-primary text-primary-foreground border-0 mb-6">
                 <CardHeader className="text-center p-4 md:p-6">
@@ -788,6 +814,12 @@ export default function ProposalPage() {
                   <CardTitle className="text-xl md:text-2xl font-bold">Aannames & Randvoorwaarden</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3 p-4 md:p-6 text-muted-foreground">
+                  <p className="font-semibold text-slate-900">
+                    • **SaaS-model:** Dit platform wordt aangeboden als Software as a Service. Het intellectueel
+                    eigendom van de software, code en architectuur blijft eigendom van Ecommerce-manager.nl. Jullie
+                    krijgen een gebruiksrecht voor de duur van het contract
+                  </p>
+                  {/* </CHANGE> */}
                   <p>• Inhoud (teksten, productdata, beeld) wordt aangeleverd; wij leveren structuur en componenten</p>
                   <p>• Domein/hosting/DNS op jullie naam (wij kunnen technisch regelen)</p>
                   <p>
@@ -797,7 +829,6 @@ export default function ProposalPage() {
                     • Betaalprovider & logistiek: bestaande contracten of door jullie te kiezen; wij sluiten aan. Per
                     transactie wordt een verwerkingsfee van **€1 excl. btw** gerekend
                   </p>
-                  {/* </CHANGE> */}
                   <p>• Doorlooptijd en planning in overleg op basis van beschikbaarheid van content en feedback</p>
                 </CardContent>
               </Card>
