@@ -25,22 +25,30 @@ import {
 import Image from "next/image"
 
 export default function ProposalPage() {
+  console.log("[v0] ProposalPage component rendering")
+
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    console.log("[v0] Password submitted")
     if (password === "schaap2025") {
+      console.log("[v0] Password correct, authenticating")
       setIsAuthenticated(true)
       setError("")
     } else {
+      console.log("[v0] Password incorrect")
       setError("Onjuiste code. Probeer opnieuw.")
       setPassword("")
     }
   }
 
+  console.log("[v0] isAuthenticated:", isAuthenticated)
+
   if (!isAuthenticated) {
+    console.log("[v0] Rendering password gate")
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
@@ -72,6 +80,8 @@ export default function ProposalPage() {
       </div>
     )
   }
+
+  console.log("[v0] Rendering main proposal content")
 
   return (
     <div className="min-h-screen bg-background">
@@ -150,8 +160,8 @@ export default function ProposalPage() {
                   <p className="text-muted-foreground leading-relaxed">
                     Jullie hebben specifieke functies nodig en moeten voldoen aan strikte compliance-eisen. Of je nu
                     kiest voor migratie of voor iets nieuws bouwen—er zal hoe dan ook geïnvesteerd moeten worden. De
-                    vraag is dus niet <em>of</em> je investeert, maar <em>waarin</em> je investeert: in het verleden of
-                    in de toekomst.
+                    vraag is dus niet *of* je investeert, maar *waarin* je investeert: in het verleden of in de
+                    toekomst.
                   </p>
                   {/* </CHANGE> */}
                   <div className="bg-slate-50 rounded-lg p-4 md:p-6 my-4 md:my-6 border border-slate-200">
@@ -160,19 +170,18 @@ export default function ProposalPage() {
                     </h3>
                     <p className="text-slate-800 leading-relaxed mb-3">
                       Na twee gesprekken met Margit en een grondige marktverkenning ben ik tot dit voorstel gekomen.
-                      Niet zomaar een offerte, maar een <strong>samenwerkingsvoorstel</strong> waarbij we samen
-                      investeren in iets nieuws.
+                      Niet zomaar een offerte, maar een **samenwerkingsvoorstel** waarbij we samen investeren in iets
+                      nieuws.
                     </p>
                     <p className="text-slate-800 leading-relaxed mb-3">
                       Ik wil graag investeren in een platform dat niet alleen voor Schapendokter werkt, maar ook voor
                       andere partijen in de veterinaire markt. Door nu samen op te trekken, bouwen we iets dat
-                      toekomstbestendig is én geschikt voor meerdere klanten. Jullie krijgen een{" "}
-                      <strong>modern, compliant platform</strong> dat helemaal van deze tijd is—tegen een kostprijs die
-                      normaal gesproken niet haalbaar zou zijn.
+                      toekomstbestendig is én geschikt voor meerdere klanten. Jullie krijgen een **modern, compliant
+                      platform** dat helemaal van deze tijd is—tegen een kostprijs die normaal gesproken niet haalbaar
+                      zou zijn.
                     </p>
                     <p className="text-slate-800 leading-relaxed">
-                      Dit voorstel is gebouwd op <strong>kennis en vertrouwen</strong>. Samen bouwen we aan iets nieuws
-                      in de markt.
+                      Dit voorstel is gebouwd op **kennis en vertrouwen**. Samen bouwen we aan iets nieuws in de markt.
                     </p>
                     {/* </CHANGE> */}
                   </div>
@@ -202,28 +211,28 @@ export default function ProposalPage() {
                 {/* </CHANGE> */}
                 <CardContent className="space-y-4 pt-4 md:pt-6 p-4 md:p-6">
                   <p className="text-base md:text-lg leading-relaxed">
-                    <strong>MVP staat voor "Minimum Viable Product"</strong> – oftewel: de minimaal werkende versie van
-                    jullie nieuwe platform. Het bevat alle essentiële functies die jullie nodig hebben om direct te
-                    kunnen starten, zonder overbodige toeters en bellen.
+                    **MVP staat voor "Minimum Viable Product"** – oftewel: de minimaal werkende versie van jullie nieuwe
+                    platform. Het bevat alle essentiële functies die jullie nodig hebben om direct te kunnen starten,
+                    zonder overbodige toeters en bellen.
                   </p>
                   <div className="bg-slate-50 rounded-lg p-4 md:p-6 border border-slate-200">
                     <h3 className="font-semibold text-slate-900 mb-3">🎯 Waarom een MVP?</h3>
                     <div className="space-y-2 text-slate-800">
                       <p>
-                        <strong>1. Sneller live:</strong> In plaats van maanden wachten op een "perfect" systeem, kunnen
-                        jullie binnen enkele weken al aan de slag
+                        **1. Sneller live:** In plaats van maanden wachten op een "perfect" systeem, kunnen jullie
+                        binnen enkele weken al aan de slag
                       </p>
                       <p>
-                        <strong>2. Lager risico:</strong> We bouwen eerst wat echt nodig is, en breiden daarna uit op
-                        basis van jullie ervaringen
+                        **2. Lager risico:** We bouwen eerst wat echt nodig is, en breiden daarna uit op basis van
+                        jullie ervaringen
                       </p>
                       <p>
-                        <strong>3. Slimmer investeren:</strong> Jullie betalen alleen voor functies die jullie echt
-                        gebruiken, niet voor "nice to have" features
+                        **3. Slimmer investeren:** Jullie betalen alleen voor functies die jullie echt gebruiken, niet
+                        voor "nice to have" features
                       </p>
                       <p>
-                        <strong>4. Leren en verbeteren:</strong> Door snel te starten kunnen we samen ontdekken wat
-                        werkt en wat beter kan
+                        **4. Leren en verbeteren:** Door snel te starten kunnen we samen ontdekken wat werkt en wat
+                        beter kan
                       </p>
                     </div>
                     {/* </CHANGE> */}
@@ -399,10 +408,10 @@ export default function ProposalPage() {
                 </CardHeader>
                 <CardContent className="space-y-4 p-4 md:p-6">
                   <p className="text-base md:text-lg leading-relaxed">
-                    Schapendokter.nl krijgt een <strong>compliance-first commerce-omgeving</strong> die specifiek is
-                    ontworpen voor de Nederlandse veterinaire markt. De MVP richt zich op het correct aanbieden van
-                    VRIJ-producten, het veilig en wettelijk juist afhandelen van URA-middelen, en het
-                    informeren/doorverwijzen bij UDA/UDD (zonder online verkoop).
+                    Schapendokter.nl krijgt een **compliance-first commerce-omgeving** die specifiek is ontworpen voor
+                    de Nederlandse veterinaire markt. De MVP richt zich op het correct aanbieden van VRIJ-producten, het
+                    veilig en wettelijk juist afhandelen van URA-middelen, en het informeren/doorverwijzen bij UDA/UDD
+                    (zonder online verkoop).
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
                     Daarnaast bevat de MVP een basis B2C/B2B-laag, Bel-mij en Afspraak-aanvraag, plus een Kennisbank,
@@ -483,14 +492,12 @@ export default function ProposalPage() {
                   </CardHeader>
                   <CardContent className="space-y-3 p-4 md:p-6">
                     <p className="text-muted-foreground">
-                      <strong>Volgorde:</strong> Login → Patiënt/UBN → Recept → NL-adres → Betalen
+                      **Volgorde:** Login → Patiënt/UBN → Recept → NL-adres → Betalen
                     </p>
                     <p className="text-muted-foreground">
-                      <strong>Consume-once:</strong> Recept wordt niet hergebruikt na volledige uitlevering
+                      **Consume-once:** Recept wordt niet hergebruikt na volledige uitlevering
                     </p>
-                    <p className="text-muted-foreground">
-                      <strong>Audit-events:</strong> Op kritieke stappen (wie/wat/wanneer)
-                    </p>
+                    <p className="text-muted-foreground">**Audit-events:** Op kritieke stappen (wie/wat/wanneer)</p>
                   </CardContent>
                 </Card>
 
@@ -502,12 +509,11 @@ export default function ProposalPage() {
                   </CardHeader>
                   <CardContent className="space-y-3 p-4 md:p-6">
                     <p className="text-muted-foreground">
-                      <strong>Bel-mij formulier:</strong> Met reden/triage; queue in Admin: Nieuw / In behandeling /
-                      Afgehandeld
+                      **Bel-mij formulier:** Met reden/triage; queue in Admin: Nieuw / In behandeling / Afgehandeld
                     </p>
                     <p className="text-muted-foreground">
-                      <strong>Afspraak-aanvraag:</strong> Formulier met voorkeursmoment; bevestiging vanuit backoffice
-                      (nog geen agenda-koppeling in MVP)
+                      **Afspraak-aanvraag:** Formulier met voorkeursmoment; bevestiging vanuit backoffice (nog geen
+                      agenda-koppeling in MVP)
                     </p>
                     <p className="text-muted-foreground">Verzoeken worden opgeslagen bij het account/klant</p>
                   </CardContent>
@@ -551,12 +557,10 @@ export default function ProposalPage() {
                   </CardHeader>
                   <CardContent className="space-y-3 p-4 md:p-6">
                     <p className="text-muted-foreground">
-                      <strong>Nieuw jasje:</strong> Modern, toegankelijk (WCAG), mobiel-vriendelijk; duidelijke
-                      compliance-microcopy
+                      **Nieuw jasje:** Modern, toegankelijk (WCAG), mobiel-vriendelijk; duidelijke compliance-microcopy
                     </p>
                     <p className="text-muted-foreground">
-                      <strong>API-first, modulair:</strong> Klaar voor toekomstige koppelingen (PMS, teleconsult,
-                      fulfilment-pro)
+                      **API-first, modulair:** Klaar voor toekomstige koppelingen (PMS, teleconsult, fulfilment-pro)
                     </p>
                   </CardContent>
                 </Card>
@@ -750,40 +754,36 @@ export default function ProposalPage() {
 
                 <Card className="border-border" style={{ backgroundColor: "#fffbef" }}>
                   <CardHeader className="p-4 md:p-6">
-                    <CardTitle className="text-lg md:text-xl font-bold">5. Maatwerkontwikkeling</CardTitle>
+                    <CardTitle className="text-lg md:text-xl font-bold">
+                      5. Maatwerkontwikkeling, Consultancy & Project Management
+                    </CardTitle>
                     <p className="text-sm text-muted-foreground">(optioneel)</p>
                   </CardHeader>
                   <CardContent className="p-4 md:p-6">
                     <div className="text-2xl md:text-3xl font-bold text-primary mb-2">€100 / uur</div>
                     <p className="text-sm md:text-base text-muted-foreground mb-4">excl. btw</p>
                     <p className="text-sm md:text-base text-muted-foreground">
-                      Development op nacalculatie: nieuwe functies, integraties, speciale rapportages. Vooraf kleine
-                      scope + schatting per change.
+                      Consultancy, development en project management op nacalculatie: nieuwe functies, integraties,
+                      speciale rapportages, strategisch advies en projectbegeleiding. Vooraf kleine scope + schatting
+                      per change.
                     </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-border" style={{ backgroundColor: "#fffbef" }}>
+                  <CardHeader className="p-4 md:p-6">
+                    <CardTitle className="text-lg md:text-xl font-bold">
+                      6. Toekomstige Uitbreidingen (Richtlijn)
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-4 md:p-6 space-y-2 text-muted-foreground">
+                    <p>• **Teleconsult (opnames + transcriptie):** Later te specificeren (prijs n.n.b.)</p>
+                    <p>• **PMS-koppeling (flexibele schil):** Projectbasis offerte per PMS/vestiging</p>
                   </CardContent>
                 </Card>
               </div>
 
               <Card className="border-border mt-4 md:mt-6" style={{ backgroundColor: "#fffbef" }}>
-                <CardHeader className="p-4 md:p-6">
-                  <CardTitle className="text-lg md:text-xl font-bold">
-                    6. Toekomstige Uitbreidingen (Richtlijn)
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="p-4 md:p-6 space-y-2 text-muted-foreground">
-                  <p>
-                    • <strong>Teleconsult (opnames + transcriptie):</strong> Later te specificeren (prijs n.n.b.)
-                  </p>
-                  <p>
-                    • <strong>PMS-koppeling (flexibele schil):</strong> Projectbasis offerte per PMS/vestiging
-                  </p>
-                </CardContent>
-              </Card>
-            </section>
-
-            {/* Assumptions */}
-            <section>
-              <Card className="border-border" style={{ backgroundColor: "#fffbef" }}>
                 <CardHeader className="p-4 md:p-6">
                   <CardTitle className="text-xl md:text-2xl font-bold">Aannames & Randvoorwaarden</CardTitle>
                 </CardHeader>
@@ -793,7 +793,11 @@ export default function ProposalPage() {
                   <p>
                     • Go-live criteria: MVP-features live, basis content gevuld, EU-logo-link werkend, URA-gate getest
                   </p>
-                  <p>• Betaalprovider & logistiek: bestaande contracten of door jullie te kiezen; wij sluiten aan</p>
+                  <p>
+                    • Betaalprovider & logistiek: bestaande contracten of door jullie te kiezen; wij sluiten aan. Per
+                    transactie wordt een verwerkingsfee van **€1 excl. btw** gerekend
+                  </p>
+                  {/* </CHANGE> */}
                   <p>• Doorlooptijd en planning in overleg op basis van beschikbaarheid van content en feedback</p>
                 </CardContent>
               </Card>
@@ -807,12 +811,11 @@ export default function ProposalPage() {
                 </CardHeader>
                 <CardContent className="p-4 md:p-6">
                   <p className="text-base md:text-lg leading-relaxed text-center">
-                    Voor <strong>€17.500 (ex btw)</strong> leveren we een NL-compliant, veterinaire MVP-webshop met
+                    Voor **€17.500 (ex btw)** leveren we een NL-compliant, veterinaire MVP-webshop met
                     VRIJ/URA/UDA/UDD-flows, B2C/B2B, Bel-mij & Afspraak-aanvraag, Kennisbank/Nieuws/Zoek, en een compact
                     Admin met exports—klaar om later uit te breiden met teleconsult, PMS-koppelingen en extra
-                    storefronts. Het onderhoud & SLA kost <strong>€249 p/m</strong> per storefront; marketing/content
-                    kan flexibel via een strippenkaart (<strong>€50/u</strong>); extra ontwikkeling tegen{" "}
-                    <strong>€100/u</strong>.
+                    storefronts. Het onderhoud & SLA kost **€249 p/m** per storefront; marketing/content kan flexibel
+                    via een strippenkaart (**€50/u**); extra ontwikkeling tegen **€100/u**.
                   </p>
                 </CardContent>
               </Card>
@@ -875,30 +878,27 @@ export default function ProposalPage() {
                     Van Adviestraject naar Samenwerkingsvoorstel
                   </h2>
                   <p className="text-base md:text-lg text-slate-800 leading-relaxed mb-4">
-                    Op basis van <strong>twee uitgebreide gesprekken met Margit</strong>, marktonderzoek en onze
-                    gezamenlijke kennis hebben we het adviestraject al doorlopen. In plaats van eerst een apart
-                    adviestraject te starten, hebben we direct geïnvesteerd in een concreet voorstel:
+                    Op basis van **twee uitgebreide gesprekken met Margit** , marktonderzoek en onze gezamenlijke kennis
+                    hebben we het adviestraject al doorlopen. In plaats van eerst een apart adviestraject te starten,
+                    hebben we direct geïnvesteerd in een concreet voorstel:
                   </p>
                   <div className="bg-white rounded-lg p-4 mb-4 border border-slate-200">
                     <ul className="space-y-2 text-slate-900">
                       <li className="flex items-start gap-2">
                         <CheckCircle className="h-5 w-5 text-slate-600 flex-shrink-0 mt-0.5" />
                         <span>
-                          <strong>Een volledig uitgewerkt MVP-voorstel</strong> met concrete functionaliteit,
-                          kostenoverzicht en implementatieplan
+                          **Een volledig uitgewerkt MVP-voorstel** met concrete functionaliteit, kostenoverzicht en
+                          implementatieplan
                         </span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="h-5 w-5 text-slate-600 flex-shrink-0 mt-0.5" />
-                        <span>
-                          <strong>Een werkend prototype</strong> waarin jullie de oplossing al kunnen ervaren en testen
-                        </span>
+                        <span>**Een werkend prototype** waarin jullie de oplossing al kunnen ervaren en testen</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckCircle className="h-5 w-5 text-slate-600 flex-shrink-0 mt-0.5" />
                         <span>
-                          <strong>Marktonderzoek en analyse</strong> specifiek voor de veterinaire sector en
-                          schapenhouderij
+                          **Marktonderzoek en analyse** specifiek voor de veterinaire sector en schapenhouderij
                         </span>
                       </li>
                     </ul>
@@ -906,9 +906,9 @@ export default function ProposalPage() {
                   <div className="bg-gradient-to-r from-slate-50 to-slate-100 rounded-lg p-4 mb-4 border-2 border-slate-300">
                     <h3 className="font-semibold text-slate-900 mb-2 text-lg">🤝 Samen Investeren, Samen Bouwen</h3>
                     <p className="text-slate-800 leading-relaxed mb-3">
-                      De situatie is veranderd van een traditioneel klant-leverancier project naar een{" "}
-                      <strong>samenwerkingsovereenkomst</strong> waarbij we samen investeren in een compliant
-                      commerce-omgeving. Niet alleen voor Schapendokter, maar voor de hele veterinaire markt.
+                      De situatie is veranderd van een traditioneel klant-leverancier project naar een
+                      **samenwerkingsovereenkomst** waarbij we samen investeren in een compliant commerce-omgeving. Niet
+                      alleen voor Schapendokter, maar voor de hele veterinaire markt.
                     </p>
                     <p className="text-slate-800 leading-relaxed">
                       Wij investeren onze kennis, ervaring en ontwikkeltijd. Jullie krijgen een toekomstbestendig,
@@ -920,8 +920,8 @@ export default function ProposalPage() {
                   <div className="bg-slate-800 text-white rounded-lg p-4 text-center">
                     <p className="font-semibold text-lg mb-2">👉 Bekijk het concrete samenwerkingsvoorstel</p>
                     <p className="text-slate-200">
-                      Ga naar het tabblad <strong>"Voorstel Nieuw Platform"</strong> voor het volledige MVP-voorstel met
-                      demo, functionaliteit en investering
+                      Ga naar het tabblad **"Voorstel Nieuw Platform"** voor het volledige MVP-voorstel met demo,
+                      functionaliteit en investering
                     </p>
                     {/* </CHANGE> */}
                   </div>
@@ -1162,48 +1162,37 @@ export default function ProposalPage() {
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                             <p>
-                              <strong>Jullie visie en ambities</strong> - Waar willen jullie naartoe? Lokaal sterk of
-                              landelijk groeien?
+                              **Jullie visie en ambities** - Waar willen jullie naartoe? Lokaal sterk of landelijk
+                              groeien?
                             </p>
                           </div>
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                             <p>
-                              <strong>Klantervaring verbeteren</strong> - Welke knelpunten ervaren klanten en waar
-                              liggen kansen?
+                              **Klantervaring verbeteren** - Welke knelpunten ervaren klanten en waar liggen kansen?
                             </p>
                           </div>
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p>
-                              <strong>Slimme productconcepten</strong> - Abonnementen, bundels en nieuwe verdienmodellen
-                            </p>
+                            <p>**Slimme productconcepten** - Abonnementen, bundels en nieuwe verdienmodellen</p>
                           </div>
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p>
-                              <strong>Systemen laten samenwerken</strong> - Koppelingen die tijd en fouten besparen
-                            </p>
+                            <p>**Systemen laten samenwerken** - Koppelingen die tijd en fouten besparen</p>
                           </div>
                         </div>
                         <div className="space-y-3">
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p>
-                              <strong>Realistische planning</strong> - Wat kan wanneer en wat kost het echt?
-                            </p>
+                            <p>**Realistische planning** - Wat kan wanneer en wat kost het echt?</p>
                           </div>
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p>
-                              <strong>Risico's voorkomen</strong> - Waar moeten we op letten en hoe pakken we dat aan?
-                            </p>
+                            <p>**Risico's voorkomen** - Waar moeten we op letten en hoe pakken we dat aan?</p>
                           </div>
                           <div className="flex items-start gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                            <p>
-                              <strong>Concrete vervolgstappen</strong> - Wat gaan we doen en hoe pakken we dat aan?
-                            </p>
+                            <p>**Concrete vervolgstappen** - Wat gaan we doen en hoe pakken we dat aan?</p>
                           </div>
                         </div>
                       </div>
